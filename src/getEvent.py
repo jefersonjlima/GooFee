@@ -18,7 +18,8 @@ args = vars(parser.parse_args())
 SCOPES = ['https://www.googleapis.com/auth/calendar.readonly']
 
 # Customize it
-PATH_GPOLY = '/home/jeferson/git/GPolybar/configs/'
+# TODO
+PATH_GPOLY = '/home/jeferson/git/gfeed/configs/'
 USER = os.environ.get('USER')
 
 def createToken():
@@ -63,6 +64,7 @@ def getAllEvents(creds) -> None:
                 break
 
         eventList = [] 
+#        now = datetime.datetime.utcnow()
         now = datetime.datetime.utcnow()
 
         for ID in IdList:
@@ -77,7 +79,6 @@ def getAllEvents(creds) -> None:
                             now + 
                             datetime.timedelta(days= args['days'])).isoformat() + 'Z',
                         ).execute()
-    #            eventList.append(events)
                 for event in events['items']:
                     eventList.append(event)
                 page_token = events.get('nextPageToken')
@@ -103,7 +104,7 @@ def formatString(event):
     dt = event["start"]["dateTime"][:-9]
     dt = datetime.datetime.strptime(dt, '%Y-%m-%dT%H:%M')
     strPoly = calendar.day_name[ dt.weekday() ][:3] + " at "
-    strPoly += dt.strftime("%H:%M") + "h "
+    strPoly += dt.strftime("%H:%M") + " "
     strPoly += event["summary"] + "\n"
 
     return strPoly
