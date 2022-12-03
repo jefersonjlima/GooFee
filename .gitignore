@@ -1,4 +1,5 @@
 ## Output Files
-
-__pycache__
+__pycache__/
+*.egg-info/
+# 
 /configs/
