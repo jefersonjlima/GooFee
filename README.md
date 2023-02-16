@@ -18,3 +18,15 @@ click-left = brave https://calendar.google.com/calendar
 click-right = notify-send --icon=gtk-info GFeed ""
 interval = 900
 ```
+
+Now in `config.ini`:
+
+```bash
+modules-center = gFeed
+```
+
+after that:
+
+![](figures/coffe.png)
+
+
