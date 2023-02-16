@@ -94,7 +94,11 @@ def getAllEvents(creds) -> None:
             for ev in eventList:
                 strPoly = formatString(ev)
                 feedCal.write(strPoly)
-        print(formatString(eventList[0])[:-1])
+#        import pdb; pdb.set_trace()
+        if not eventList:
+            print("None")
+        else:
+            print(formatString(eventList[0])[:-1])
     else:
         print("Cannot be get the credentials!")
 

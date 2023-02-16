@@ -1,4 +1,4 @@
-# Google Feed for Polybar
+# GooFee is a GoogleFeeds for Polybar
 
 WIP
 

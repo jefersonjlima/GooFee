@@ -9,7 +9,7 @@ help:
 	@echo "make prepare-dev"
 	@echo "       prepare development environment"
 	@echo "make run_pci"
-	@echo "       run BotScraper PCI Contest"
+	@echo "       run Google Feed for Polybar"
 	@echo "make docker"
 	@echo "       mount docker"
 prepare-dev:
