@@ -27,6 +27,6 @@ modules-center = gFeed
 
 after that:
 
-![](figures/coffe.png)
+![](figures/coffee.png)
 
 
