@@ -19,7 +19,7 @@ SCOPES = ['https://www.googleapis.com/auth/calendar.readonly']
 
 # Customize it
 # TODO
-PATH_GPOLY = '/home/jeferson/git/gfeed/configs/'
+PATH_GPOLY = '/home/jeferson/git/GooFee/configs/'
 USER = os.environ.get('USER')
 
 def createToken():
