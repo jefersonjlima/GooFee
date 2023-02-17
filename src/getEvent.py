@@ -96,7 +96,7 @@ def getAllEvents(creds) -> None:
                 feedCal.write(strPoly)
 #        import pdb; pdb.set_trace()
         if not eventList:
-            print("None")
+            print("Enjoy your day!!!")
         else:
             print(formatString(eventList[0])[:-1])
     else:

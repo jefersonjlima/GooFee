@@ -1,4 +1,4 @@
-# GooFee is a GoogleFeeds for Polybar
+# GooFeed is a GoogleFeeds for Polybar
 
 A simple library to show the google calendar feed on polybar bar.
 
