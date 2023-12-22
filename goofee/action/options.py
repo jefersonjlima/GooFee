@@ -1,8 +1,5 @@
 ''' Actions Object '''
 
-
-
-
 class Action:
 
     def __init__(self, config, args):
@@ -11,7 +8,7 @@ class Action:
 
     def selectAction(self):
         if   self.args['option'] == 'UPDATE':
-            None
+            print("UPDATE Mode")
         elif self.args['option'] == 'SHOW':
             None
         elif self.args['option'] == 'UP':
