@@ -1,0 +1,15 @@
+numpy==1.14.5
+u-msgpack-python==2.5.0
+matplotlib == 2.2.2
+scikit-learn==0.20.0
+scipy==1.0.1
+biosppy==0.5.1
+tornado==6.0.2
+pandas==0.23.1
+tensorflow==1.12.0
+keras==2.2.4
+wfdb==2.2.1
+mypy==0.650
+pylint==1.9.1
+pytest==4.0.2
+influxdb==5.2.2
