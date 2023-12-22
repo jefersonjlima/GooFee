@@ -28,10 +28,10 @@ test: venv
 	${PYTHON} -m pytest -vv tests
 
 lint: venv
-	${PYTHON} -m pylint --rcfile=./config/pylintrc botscraper
+	${PYTHON} -m pylint --rcfile=./config/pylintrc goofee
 
 run: venv
-	@${PYTHON} ./src/main.py
+	@${PYTHON} ./src/run.py
 
 clean:
 	@rm -rf $(VENV_NAME) *.eggs *.egg-info .cache .mypy_cache/ .pytest_cache/ *.log
