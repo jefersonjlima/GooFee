@@ -19,8 +19,8 @@ SCOPES = ['https://www.googleapis.com/auth/calendar.readonly']
 
 # Customize it
 # TODO
-PATH_GPOLY = '/home/jeferson/git/GooFee/configs/'
 USER = os.environ.get('USER')
+PATH_GPOLY = '/home/'+USER+'/.config/GooFee/configs/'
 
 def createToken():
 
@@ -34,7 +34,7 @@ def createToken():
             creds.refresh(Request())
         else:
             flow = InstalledAppFlow.from_client_secrets_file(
-                    '/home/'+ USER + '/.google_credentials.json', SCOPES)
+                    '/home/'+USER+'/.google_credentials.json', SCOPES)
             creds = flow.run_local_server(port=0)
         # Save the credentials for the next run
         with open(PATH_GPOLY + 'token.json', 'w') as token:
@@ -64,9 +64,7 @@ def getAllEvents(creds) -> None:
                 break
 
         eventList = [] 
-#        now = datetime.datetime.utcnow()
-        now = datetime.datetime.utcnow()
-
+        now = datetime.datetime.now(datetime.UTC)
         for ID in IdList:
             page_token = None
             while True:
@@ -74,10 +72,11 @@ def getAllEvents(creds) -> None:
                         calendarId=ID,
                         singleEvents=True,
                         orderBy='startTime',
-                        timeMin= now.isoformat() + 'Z',
+                        timeMin= now.strftime("%Y-%m-%dT%H:%M:%S.%fZ"),
                         timeMax= (
                             now + 
-                            datetime.timedelta(days= args['days'])).isoformat() + 'Z',
+                            datetime.timedelta(days= args['days'])
+                    ).strftime("%Y-%m-%dT%H:%M:%S.%fZ"),
                         ).execute()
                 for event in events['items']:
                     eventList.append(event)
