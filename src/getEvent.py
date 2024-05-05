@@ -93,7 +93,6 @@ def getAllEvents(creds) -> None:
             for ev in eventList:
                 strPoly = formatString(ev)
                 feedCal.write(strPoly)
-#        import pdb; pdb.set_trace()
         if not eventList:
             print("Enjoy your day!!!")
         else:
@@ -153,8 +152,11 @@ def showEvents():
 
 if __name__ == '__main__':
     if args['option'] == 'UPDATE':
-        creds = createToken() 
-        getAllEvents(creds)
+        try:
+            creds = createToken()
+            getAllEvents(creds)
+        except:
+            print("Something went wrong!")
     elif args['option'] == 'SHOW':
         showEvents()
     else:
