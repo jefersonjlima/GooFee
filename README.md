@@ -17,15 +17,14 @@ In `user_modules.ini` add this code:
 
 ```bash
 [module/GooFee]
+[module/GooFee]
+; Show the next event and forget cache automatically every 2 minutes
 type = custom/script
-; Show the next event and forget cache automatically every 60 minutes
-;format-prefix = " "
 format-prefix = "%{F#61afef}%{F-} " 
-exec = cd $GFEED_PATH && python src/getEvent.py -d 5 -o UPDATE
-; left click to launch Google Calendar
-click-left = brave https://calendar.google.com/calendar
-click-right = notify-send --icon=gtk-info GooFee ""
-interval = 900
+exec = cd /home/$USER/.config/GooFee && python src/getEvent.py -d 3 -o UPDATE
+click-left = firefox https://calendar.google.com/calendar/u/2/r/week
+click-right = cd /home/$USER/.config/GooFee && event=$(python src/getEvent.py -o SHOW) && notify-send GooFee "$(echo $event)"
+interval = 120
 ```
 
 Now in `config.ini`:
